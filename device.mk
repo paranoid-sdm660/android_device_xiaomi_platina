@@ -410,6 +410,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.sdm660
 
+# System
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false
+
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
