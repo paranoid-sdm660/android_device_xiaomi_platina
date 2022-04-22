@@ -983,12 +983,19 @@ vendor/lib64/libmlipay@1.1.so
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
 
-# Perf
-vendor/bin/energy-awareness
-vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
+# Perf - from ddv_sprout-m690-user-11-RKQ1.210607.001-00WW_3_440-release-keys 
+system_ext/etc/perf/wlc_model.tflite
+system_ext/lib/libqti-perfd-client_system.so
+system_ext/lib/libqti-util_system.so
+system_ext/lib/libqti_performance.so
+system_ext/lib64/libqti-perfd-client_system.so
+system_ext/lib64/libqti-util_system.so
+system_ext/lib64/libqti_performance.so
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
 vendor/bin/msm_irqbalance
-vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
+vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/commonsysnodesconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/perfconfigstore.xml
 vendor/etc/perf/targetconfig.xml
@@ -998,11 +1005,13 @@ vendor/lib/libperfgluelayer.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
+vendor/lib/libqti-utils.so
 vendor/lib64/libperfconfig.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
+vendor/lib64/libqti-utils.so
 
 # Peripheral manager
 vendor/bin/pm-proxy
