@@ -16,5 +16,11 @@
     "target_path" : "vendor/xiaomi-firmware",
     "branch"      : "eleven",
     "remote"      : "pixel-devices-blobs"
+  },
+  {
+    "repository": "jjpprrrr/prelude-clang",
+    "target_path": "prebuilts/clang/host/linux-x86/clang-prelude",
+    "branch": "master",
+    "remote": "gitlab"
   }
 ]
