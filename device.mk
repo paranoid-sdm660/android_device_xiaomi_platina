@@ -12,8 +12,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aosp
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
     NotchBarKiller
@@ -194,7 +193,7 @@ PRODUCT_COPY_FILES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    XiaomiDoze
+  ParanoidDoze
 
 # DPM
 PRODUCT_PACKAGES += \
@@ -207,13 +206,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4 \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm@1.4-service.clearkey
-
-# fwk-detect
-PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor \
-    libvndfwk_detect_jni.qti \
-    libvndfwk_detect_jni.qti.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -250,7 +242,6 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor \
     libhidltransport \
     libhidltransport.vendor \
@@ -270,8 +261,8 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
+    init.sdm660.usb.rc \
+    init.sdm660.usb.sh \
     init.recovery.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc \
@@ -294,11 +285,6 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.xiaomi_sdm660
-
-# LiveDisplay native
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0-service-sysfs
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -338,12 +324,21 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-    android.hardware.power.stats@1.0-service.mock \
-    vendor.qti.hardware.perf@2.2.vendor
+    android.hardware.power.stats@1.0-service.mock
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf
+
+# Board
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := sdm660
+TARGET_BOARD_PLATFORM := sdm660
+
+# QCOM
+TARGET_COMMON_QTI_COMPONENTS := \
+    av \
+    bt \
+    perf
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -384,9 +379,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 # Radio
 PRODUCT_PACKAGES += \
    android.hardware.radio.config@1.2 \
@@ -422,14 +414,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
-
-# Trust
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.xiaomi_sdm660.qti
 
 # TinyXML
 PRODUCT_PACKAGES += \
