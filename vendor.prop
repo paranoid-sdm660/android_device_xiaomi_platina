@@ -208,3 +208,8 @@ persist.vendor.delta_time.enable=true
 
 # BPF
 ro.kernel.ebpf.supported=true
+
+# Doze
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sensor.proximity=true \
+    ro.sensor.pickup=android.sensor.tilt_detector
