@@ -111,6 +111,10 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/framework_man
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/compatibility_matrix.xml
 
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/configs/manifests/device_framework_compatibility_matrix.xml \
+    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_sdm660
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sdm660
